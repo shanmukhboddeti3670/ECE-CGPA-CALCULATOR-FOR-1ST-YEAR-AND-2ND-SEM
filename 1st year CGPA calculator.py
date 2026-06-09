@@ -46,19 +46,12 @@ if st.button("Calculate My CGPA", type="primary"):
     
     # Run calculations using your subject credits
     num1 = calculate_points(eng,3)
-    st.success(num1)
     num2 = calculate_points(math,3)
-    st.success(num2)
     num3 = calculate_points(chem,3)
-    st.success(num3)
     num4 = calculate_points(ct,3)
-    st.success(num4)
     num5 = calculate_points(pp,3)
-    st.success(num5)
     num6 = calculate_points(dlc,4)
-    st.success(num6)
     num7 = calculate_points((chem_lab*2),1)
-    st.success(num7)
     
     # Sem 2 total credits = 20
     sem_2 = (num1 + num2 + num3 + num4 + num5 + num6 + num7)/20
