@@ -1,6 +1,6 @@
 ﻿import streamlit as st
 
-# Your custom grade-point matching function
+# grade-point
 def calculate_points(marks, credits):
     if marks >= 90 and marks <= 100:
         grade_point = 10
