@@ -1,7 +1,8 @@
 ﻿import streamlit as st
-
+total_credits=0
 # grade-point
 def calculate_points(marks, credits):
+    global total_credits
     if marks >= 90 and marks <= 100:
         grade_point = 10
     elif marks >= 80 and marks <= 89:
@@ -14,6 +15,8 @@ def calculate_points(marks, credits):
         grade_point = 6
     else:
         grade_point = 0
+    if(grade_point!=0):
+        total_credits+=credits
     return grade_point*credits
 
 # Streamlit Page Setup (No emojis in title to avoid '??' encoding errors)
@@ -54,7 +57,7 @@ if st.button("Calculate My CGPA", type="primary"):
     num7 = calculate_points((chem_lab*2),1)
     
     # Sem 2 total credits = 20
-    sem_2 = (num1 + num2 + num3 + num4 + num5 + num6 + num7)/20
+    sem_2 = (num1 + num2 + num3 + num4 + num5 + num6 + num7)/total_credits
     sem_2_CGPA = round(sem_2, 2)
     
     # First Year total credits = 39 (Sem 1: 19 + Sem 2: 20)
